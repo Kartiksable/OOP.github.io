@@ -1,0 +1,67 @@
+94 1 declare
+
+95 2 roll noi book_borrower.roll_no%type; 96 3 name1 book_borrower.name%type;
+
+97 4 date issue1 book_borrower.date_issuextype;
+
+98 99
+
+5 book_name1 book_borrower.book_namestype; 6 statusi book_borrower.statusstype;
+
+100
+
+7 days number;
+
+101
+
+8 fine_ant number :=0;
+
+162
+
+9 begin
+
+103 10
+
+roll_no1:=&roll_no; 11 book name1:=&book_name;
+
+164
+
+165 106
+
+12 select date issue, status into date issuei, statusi fron book_borrower where roll_no-roll_noi and book_nane-book_nane1; 13 days: trunc(sysdate)-trunc(date_issuel);
+
+167
+
+14 tf days 15 and days<=30
+
+then fine_ant:=(days-15)*5; ant:=(30-15)*5+(days-30)*50;
+
+108 15
+
+elsif days 38 then fine end if; status1 = 'I' then
+
+109 16 110
+
+17 if
+
+111 112
+
+18 19
+
+update book_borrower set status='R'
+
+113 114
+
+20 where roll nowroll_noi and book_name=book_nane1; 21
+
+if fine ant>0 then insert into fine_ant(roll_no,date_fine, amount)
+
+115 22
+
+116 23 values(roll_noi, sysdate, fine_ant);
+
+117 24
+
+end if;
+
+118 25 end if;
